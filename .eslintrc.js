@@ -13,7 +13,7 @@ module.exports = {
 	rules: {
 		'no-type-assertion/no-type-assertion': 'error',
 		'@typescript-eslint/consistent-type-imports': "error",
-		'@typescript-eslint/no-inferrable-types': 'off',
+		'@typescript-eslint/no-inferrable-types': 'error',
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/no-unused-vars': ['error', {
