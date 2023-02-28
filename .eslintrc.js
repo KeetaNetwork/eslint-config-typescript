@@ -3,13 +3,19 @@ module.exports = {
 	plugins: [
 		'@typescript-eslint',
 		'import',
-		'no-type-assertion',
-		'package-json-dependencies'
+		'no-type-assertion'
 	],
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'airbnb-typescript/base'
+	],
+	overrides: [
+		{
+		  'files': ['*.json'],
+		  'parser': 'eslint-plugin-package-json-dependencies',
+		  'plugins': ['package-json-dependencies']
+		}
 	],
 	rules: {
 		'package-json-dependencies/no-missing-types': 'error',
