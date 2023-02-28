@@ -14,7 +14,7 @@ module.exports = {
 	rules: {
 		'package-json-dependencies/no-missing-types': 'error',
 		'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
-		'alphabetically-sorted-dependencies': 'error',
+		'package-json-dependencies/alphabetically-sorted-dependencies': 'error',
 		'no-type-assertion/no-type-assertion': 'error',
 		'@typescript-eslint/consistent-type-imports': 'error',
 		'@typescript-eslint/no-inferrable-types': ['error', {
