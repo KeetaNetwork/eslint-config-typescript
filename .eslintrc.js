@@ -12,15 +12,20 @@ module.exports = {
 	],
 	overrides: [
 		{
-		  'files': ['*.json'],
-		  'parser': 'eslint-plugin-package-json-dependencies',
-		  'plugins': ['package-json-dependencies']
+			files: ['package.json'],
+			parser: 'eslint-plugin-package-json-dependencies',
+			plugins: ['package-json-dependencies'],
+			parserOptions: {
+				extraFileExtensions: ['.json']
+			},
+			rules: {
+				'package-json-dependencies/no-missing-types': 'error',
+				'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
+				'package-json-dependencies/alphabetically-sorted-dependencies': 'error',
+			}
 		}
 	],
 	rules: {
-		'package-json-dependencies/no-missing-types': 'error',
-		'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
-		'package-json-dependencies/alphabetically-sorted-dependencies': 'error',
 		'no-type-assertion/no-type-assertion': 'error',
 		'@typescript-eslint/consistent-type-imports': 'error',
 		'@typescript-eslint/no-inferrable-types': ['error', {
