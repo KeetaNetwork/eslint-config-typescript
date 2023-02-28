@@ -3,7 +3,8 @@ module.exports = {
 	plugins: [
 		'@typescript-eslint',
 		'import',
-		'no-type-assertion'
+		'no-type-assertion',
+		'package-json-dependencies'
 	],
 	extends: [
 		'eslint:recommended',
@@ -11,8 +12,11 @@ module.exports = {
 		'airbnb-typescript/base'
 	],
 	rules: {
+		'package-json-dependencies/no-missing-types': 'error',
+		'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
+		'alphabetically-sorted-dependencies': 'error',
 		'no-type-assertion/no-type-assertion': 'error',
-		'@typescript-eslint/consistent-type-imports': "error",
+		'@typescript-eslint/consistent-type-imports': 'error',
 		'@typescript-eslint/no-inferrable-types': ['error', {
 			'ignoreParameters': true
 		}],
