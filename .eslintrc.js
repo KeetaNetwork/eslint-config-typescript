@@ -10,9 +10,27 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'airbnb-typescript/base'
 	],
+	overrides: [
+		{
+			files: ['package.json'],
+			parser: 'eslint-plugin-package-json-dependencies',
+			plugins: ['package-json-dependencies'],
+			parserOptions: {
+				extraFileExtensions: ['.json']
+			},
+			extends: [],
+			rules: {
+				'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
+				'package-json-dependencies/alphabetically-sorted-dependencies': 'error',
+				'@typescript-eslint/quotes': 'off',
+				'@typescript-eslint/semi': 'off',
+				'@typescript-eslint/no-unused-expressions': 'off'
+			}
+		},
+	],
 	rules: {
 		'no-type-assertion/no-type-assertion': 'error',
-		'@typescript-eslint/consistent-type-imports': "error",
+		'@typescript-eslint/consistent-type-imports': 'error',
 		'@typescript-eslint/no-inferrable-types': ['error', {
 			'ignoreParameters': true
 		}],
