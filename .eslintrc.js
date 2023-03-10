@@ -100,6 +100,8 @@ module.exports = {
 		'@typescript-eslint/no-use-before-define': 'error',
 		'@typescript-eslint/no-unused-expressions': 'error',
 		'@typescript-eslint/no-throw-literal': 'error',
-		'@typescript-eslint/no-duplicate-enum-values': 'error'
+		'@typescript-eslint/no-duplicate-enum-values': 'error',
+        '@typescript-eslint/await-thenable': 'error',
+        'import/no-cycle': 'error',
 	}
 };
