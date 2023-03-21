@@ -103,6 +103,5 @@ module.exports = {
 		'@typescript-eslint/no-duplicate-enum-values': 'error',
 		'@typescript-eslint/await-thenable': 'error',
 		'import/no-cycle': 'error',
-        'no-console': 'error',
 	}
 };
