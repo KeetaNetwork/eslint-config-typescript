@@ -3,7 +3,8 @@ module.exports = {
 	plugins: [
 		'@typescript-eslint',
 		'import',
-		'no-type-assertion'
+		'no-type-assertion',
+		'return-parens'
 	],
 	extends: [
 		'eslint:recommended',
@@ -102,5 +103,6 @@ module.exports = {
 		'@typescript-eslint/no-throw-literal': 'error',
 		'@typescript-eslint/no-duplicate-enum-values': 'error',
 		'@typescript-eslint/await-thenable': 'error',
+		'return-parens/return-parens': 'error'
 	}
 };
