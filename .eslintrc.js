@@ -10,6 +10,7 @@ module.exports = {
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended-type-checked',
 		'airbnb-typescript/base'
 	],
 	overrides: [
@@ -31,13 +32,31 @@ module.exports = {
 		},
 	],
 	rules: {
+		/*
+		 * This rule (from @typescript-eslint/recommended-type-checked)
+		 * has no good alternative syntax, so we disable it
+		 */
+		"@typescript-eslint/no-for-in-array": 'off',
+
+		/*
+		 * This rule (from @typescript-eslint/recommended-type-checked)
+		 * is not that useful because in most cases an async function is
+		 * created to satisfy an interface
+		 */
+		"@typescript-eslint/require-await": 'off',
+
+		/*
+		 * This rule does doesn't add value for us because we already
+		 * require a comment describing why "@ts-" comments are used
+		 * so adding a linting rule just means we double up on it
+		 */
+		'@typescript-eslint/ban-ts-comment': 'off',
+
 		'no-type-assertion/no-type-assertion': 'error',
 		'@typescript-eslint/consistent-type-imports': 'error',
 		'@typescript-eslint/no-inferrable-types': ['error', {
 			'ignoreParameters': true
 		}],
-		'@typescript-eslint/no-explicit-any': 'off',
-		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/no-unused-vars': ['error', {
 			'argsIgnorePattern': '^_ignore'
 		}],
