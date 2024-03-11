@@ -12,10 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 18
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@keetapay'
 
       - name: Check version changes
         uses: EndBug/version-check@v1
