@@ -1,6 +1,6 @@
 {
 	"name": "@keetapay/eslint-config-typescript",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "KeetaPay Typescript Eslint Config",
 	"repository": "https://github.com/keetapay/eslint-config-typescript.git",
 	"main": "index.js",
