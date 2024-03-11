@@ -1,6 +1,6 @@
 {
   "name": "@keetapay/eslint-config-typescript",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "KeetaPay Typescript Eslint Config",
   "repository": "https://github.com/keetapay/eslint-config-typescript.git",
   "main": "index.js",
@@ -8,13 +8,13 @@
   "license": "ISC",
   "dependencies": {
     "@getify/eslint-plugin-proper-arrows": "11.0.3",
-    "@typescript-eslint/eslint-plugin": "5.51.0",
-    "@typescript-eslint/parser": "5.51.0",
-    "eslint": "8.33.0",
+    "@typescript-eslint/eslint-plugin": "7.1.1",
+    "@typescript-eslint/parser": "7.1.1",
+    "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
-    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-airbnb-typescript": "18.0.0",
     "eslint-plugin-no-type-assertion": "1.3.0",
-    "eslint-plugin-package-json-dependencies": "1.0.17",
+    "eslint-plugin-package-json-dependencies": "1.0.18",
     "eslint-plugin-return-parens": "1.0.13"
   }
 }
