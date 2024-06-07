@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
 	parser: '@typescript-eslint/parser',
 	plugins: [
 		'@typescript-eslint',
@@ -127,3 +127,5 @@ module.exports = {
 		'@getify/proper-arrows/this': 'error'
 	}
 };
+
+module.exports = config;
