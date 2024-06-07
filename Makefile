@@ -30,6 +30,7 @@ test: node_modules
 	done; \
 	exit "$$retval"
 	rm -rf tests/fix
+	cd plugins/eslint-plugin-return-parens && npm run test
 
 clean:
 	rm -rf node_modules plugins/eslint-plugin-return-parens/node_modules
