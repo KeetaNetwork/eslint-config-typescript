@@ -1,9 +1,7 @@
 const { RuleTester } = require("eslint");
 const enforceReturnParensRule = require("./eslint-enforce-return-parens");
 
-const ruleTester = new RuleTester({
-  parserOptions: { ecmaVersion: 2015 }
-});
+const ruleTester = new RuleTester();
 
 ruleTester.run(
   "eslint-enforce-return-parens",
