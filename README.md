@@ -9,13 +9,17 @@ $ npm install -SD @keetapay/eslint-config-typescript
 ```
 
 ```js
-// .eslintrc.js
-module.exports = {
-    // ...
-	extends: [
-        // ...
-		'@keetapay/eslint-config-typescript',
-	]
-    // ...
-}
+// eslint.config.mjs
+import keetapayConfig from '@keetapay/eslint-config-typescript';
+
+export default [
+	...keetapayConfig,
+	{
+		languageOptions: {
+			parserOptions: {
+				project: ['tsconfig.json', 'deployment/tsconfig.json']
+			}
+		}
+	}
+];
 ```
