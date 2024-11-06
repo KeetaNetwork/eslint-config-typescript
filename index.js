@@ -12,8 +12,8 @@ export default tseslint.config(
 		}
 	},
 	eslint.configs.recommended,
-	...tseslint.configs.strict,
-	...tseslint.configs.stylistic,
+	...tseslint.configs.strictTypeChecked,
+	...tseslint.configs.stylisticTypeChecked,
 	{
 		rules: {
 			/*
@@ -62,7 +62,6 @@ export default tseslint.config(
 					'balanced': true
 				}
 			}],
-			'@typescript-eslint/unbound-method': 'error',
 			// No spaces/tabs in end of line/empty line
 			'no-trailing-spaces': 'error',
 			'array-callback-return': 'error',
@@ -72,22 +71,38 @@ export default tseslint.config(
 				'default': 'array'
 			}],
 			'@typescript-eslint/consistent-indexed-object-style': ['error', 'index-signature'],
-			'@typescript-eslint/no-meaningless-void-operator': 'error',
-			'@typescript-eslint/no-misused-new': 'error',
-			'@typescript-eslint/no-this-alias': 'error',
 			'@typescript-eslint/prefer-enum-initializers': 'error',
 			'@typescript-eslint/prefer-includes': 'error',
-			'@typescript-eslint/prefer-literal-enum-member': 'error',
 			'@typescript-eslint/prefer-string-starts-ends-with': 'error',
 			'@typescript-eslint/switch-exhaustiveness-check': 'error',
 			'@typescript-eslint/no-use-before-define': 'error',
-			'@typescript-eslint/no-unused-expressions': 'error',
-			'@typescript-eslint/only-throw-error': 'error', // renamed from no-throw-literal
-			'@typescript-eslint/no-duplicate-enum-values': 'error',
-			'@typescript-eslint/await-thenable': 'error',
 			'return-parens/return-parens': 'error',
 			// Not compatible with ESLINT 9.x
 			// '@getify/proper-arrows/this': 'error'
+			'@typescript-eslint/consistent-type-definitions': 'off',
+			'@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'never' }],
+			'@typescript-eslint/no-empty-function': ['error', {
+				allow: [
+					'arrowFunctions',
+					'functions',
+					'methods',
+				]
+			}],
+			'@typescript-eslint/switch-exhaustiveness-check': ['error', {
+				allowDefaultCaseForExhaustiveSwitch: true,
+				considerDefaultExhaustiveForUnions: true,
+				requireDefaultForNonUnion: false
+			}],
+			'@typescript-eslint/no-extraneous-class': ['error', {
+				allowStaticOnly: true
+			}],
+			'@typescript-eslint/no-unnecessary-condition': 'off',
+			'@typescript-eslint/prefer-regexp-exec': 'off',
+			'@typescript-eslint/no-confusing-void-expression': 'off',
+			'@typescript-eslint/restrict-template-expressions': 'off',
+			'@typescript-eslint/no-unnecessary-type-arguments': 'off',
+			'@typescript-eslint/no-unnecessary-type-parameters': 'off',
+			'@typescript-eslint/prefer-promise-reject-errors': ['error', { allowEmptyReject: true }]
 		}
 	},
 	// @stylistic rules
