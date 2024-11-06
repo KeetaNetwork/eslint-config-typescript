@@ -36,8 +36,6 @@ export default tseslint.config(
 			 */
 			'@typescript-eslint/ban-ts-comment': 'off',
 	
-			// Not compatible with ESLINT 9.x
-			// 'no-type-assertion/no-type-assertion': 'error',
 			'@typescript-eslint/consistent-type-imports': 'error',
 			'@typescript-eslint/no-inferrable-types': ['error', {
 				'ignoreParameters': true
@@ -51,9 +49,6 @@ export default tseslint.config(
 			'@typescript-eslint/return-await': ['error', 'always'],
 			'@typescript-eslint/no-misused-promises': ['error', {
 				'checksVoidReturn': false
-			}],
-			'@typescript-eslint/no-floating-promises': ['error', {
-				'ignoreIIFE': true
 			}],
 			'curly': 'error',
 			'spaced-comment': ['error', 'always', {
