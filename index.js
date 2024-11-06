@@ -74,7 +74,6 @@ export default tseslint.config(
 			'@typescript-eslint/prefer-enum-initializers': 'error',
 			'@typescript-eslint/prefer-includes': 'error',
 			'@typescript-eslint/prefer-string-starts-ends-with': 'error',
-			'@typescript-eslint/switch-exhaustiveness-check': 'error',
 			'@typescript-eslint/no-use-before-define': 'error',
 			'return-parens/return-parens': 'error',
 			// Not compatible with ESLINT 9.x
