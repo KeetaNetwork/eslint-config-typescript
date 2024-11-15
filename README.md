@@ -9,9 +9,16 @@ $ npm install -SD @keetapay/eslint-config-typescript
 ```
 
 ```js
-// eslint.config.mjs
+// .eslint.config.mjs
 import keetapayConfig from '@keetapay/eslint-config-typescript';
 
+export default [
+	...keetapayConfig
+];
+```
+
+If you have multiple tsconfig.json files, you can specify which ones to use:
+```js
 export default [
 	...keetapayConfig,
 	{
