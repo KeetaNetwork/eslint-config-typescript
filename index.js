@@ -1,14 +1,51 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import stylistic from '@stylistic/eslint-plugin'
+import stylistic from '@stylistic/eslint-plugin';
 
 import returnParens from 'eslint-plugin-return-parens';
+import packageJsonDependencies from 'eslint-plugin-package-json-dependencies';
 
-export default tseslint.config(
-	eslint.configs.recommended,
-	...tseslint.configs.strictTypeChecked,
-	...tseslint.configs.stylisticTypeChecked,
+export default [
 	{
+		...eslint.configs.recommended,
+		files: ['**/*.{ts,tsx}', '**/*.{js,cjs,mjs}'],
+		plugins: {
+			['@stylistic']: stylistic
+		},
+		rules: {
+			// @stylistic rules
+			'@stylistic/comma-dangle': ['error', 'never'],
+			'@stylistic/indent': ['error', 'tab'],
+			'@stylistic/keyword-spacing': ['error', {
+				'overrides': { 
+					'return': { 
+						'after': false 
+					},
+					'throw': { 
+						'after': false 
+					},
+				}
+			}],
+			'@stylistic/lines-between-class-members': ['error', 'always', {
+				'exceptAfterSingleLine': true
+			}],
+			'@stylistic/object-curly-spacing': ['error', 'always', { 
+				'objectsInObjects': false 
+			}],
+			'@stylistic/space-before-function-paren': ['error', {
+				'anonymous': 'never',
+				'named': 'never',
+				'asyncArrow': 'always'
+			}],
+		}
+	},
+	...tseslint.config({
+		files: ['**/*.ts'],
+		extends: [
+			eslint.configs.recommended,
+			...tseslint.configs.strictTypeChecked,
+			...tseslint.configs.stylisticTypeChecked,
+		],
 		plugins: {
 			['return-parens']: returnParens,
 			['@stylistic']: stylistic
@@ -17,28 +54,26 @@ export default tseslint.config(
 			parserOptions: {
 				project: ['tsconfig.json']
 			}
-		}
-	},
-	{
+		},
 		rules: {
 			/*
-			 * This rule (from @typescript-eslint/recommended-type-checked)
-			 * has no good alternative syntax, so we disable it
-			 */
+			* This rule (from @typescript-eslint/recommended-type-checked)
+			* has no good alternative syntax, so we disable it
+			*/
 			"@typescript-eslint/no-for-in-array": 'off',
 	
 			/*
-			 * This rule (from @typescript-eslint/recommended-type-checked)
-			 * is not that useful because in most cases an async function is
-			 * created to satisfy an interface
-			 */
+			* This rule (from @typescript-eslint/recommended-type-checked)
+			* is not that useful because in most cases an async function is
+			* created to satisfy an interface
+			*/
 			"@typescript-eslint/require-await": 'off',
 	
 			/*
-			 * This rule does doesn't add value for us because we already
-			 * require a comment describing why "@ts-" comments are used
-			 * so adding a linting rule just means we double up on it
-			 */
+			* This rule does doesn't add value for us because we already
+			* require a comment describing why "@ts-" comments are used
+			* so adding a linting rule just means we double up on it
+			*/
 			'@typescript-eslint/ban-ts-comment': 'off',
 	
 			'@typescript-eslint/consistent-type-imports': 'error',
@@ -103,43 +138,18 @@ export default tseslint.config(
 			'@typescript-eslint/no-unnecessary-type-parameters': 'off',
 			'@typescript-eslint/prefer-promise-reject-errors': ['error', { allowEmptyReject: true }]
 		}
-	},
-	// @stylistic rules
-	{
-		rules: {
-			'@stylistic/comma-dangle': ['error', 'never'],
-			'@stylistic/indent': ['error', 'tab'],
-			'@stylistic/keyword-spacing': ['error', {
-				'overrides': { 
-					'return': { 
-						'after': false 
-					},
-					'throw': { 
-						'after': false 
-					},
-				}
-			}],
-			'@stylistic/lines-between-class-members': ['error', 'always', {
-				'exceptAfterSingleLine': true
-			}],
-			'@stylistic/object-curly-spacing': ['error', 'always', { 
-				'objectsInObjects': false 
-			}],
-			'@stylistic/space-before-function-paren': ['error', {
-				'anonymous': 'never',
-				'named': 'never',
-				'asyncArrow': 'always'
-			}],
-		}
-	},
+	}),
 	{
 		files: ['package.json'],
-		parser: 'eslint-plugin-package-json-dependencies',
-		plugins: ['package-json-dependencies'],
-		parserOptions: {
-			extraFileExtensions: ['.json']
+		plugins: {
+			['package-json-dependencies']: packageJsonDependencies
 		},
-		extends: [],
+		languageOptions: {
+			parser: packageJsonDependencies,
+			parserOptions: {
+				extraFileExtensions: ['.json']
+			}
+		},
 		rules: {
 			'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
 			'package-json-dependencies/alphabetically-sorted-dependencies': 'error',
@@ -147,5 +157,5 @@ export default tseslint.config(
 			'@typescript-eslint/semi': 'off',
 			'@typescript-eslint/no-unused-expressions': 'off'
 		}
-	},
-);
+	}
+];
