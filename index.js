@@ -23,7 +23,7 @@ export default [
 					},
 					'throw': { 
 						'after': false 
-					},
+					}
 				}
 			}],
 			'@stylistic/lines-between-class-members': ['error', 'always', {
@@ -36,7 +36,7 @@ export default [
 				'anonymous': 'never',
 				'named': 'never',
 				'asyncArrow': 'always'
-			}],
+			}]
 		}
 	},
 	...tseslint.config({
@@ -44,7 +44,7 @@ export default [
 		extends: [
 			eslint.configs.recommended,
 			...tseslint.configs.strictTypeChecked,
-			...tseslint.configs.stylisticTypeChecked,
+			...tseslint.configs.stylisticTypeChecked
 		],
 		plugins: {
 			['return-parens']: returnParens,
@@ -119,7 +119,7 @@ export default [
 				allow: [
 					'arrowFunctions',
 					'functions',
-					'methods',
+					'methods'
 				]
 			}],
 			'@typescript-eslint/switch-exhaustiveness-check': ['error', {
