@@ -5,15 +5,20 @@ import stylistic from '@stylistic/eslint-plugin'
 import returnParens from 'eslint-plugin-return-parens';
 
 export default tseslint.config(
+	eslint.configs.recommended,
+	...tseslint.configs.strictTypeChecked,
+	...tseslint.configs.stylisticTypeChecked,
 	{
 		plugins: {
 			['return-parens']: returnParens,
 			['@stylistic']: stylistic
+		},
+		languageOptions: {
+			parserOptions: {
+				project: ['tsconfig.json']
+			}
 		}
 	},
-	eslint.configs.recommended,
-	...tseslint.configs.strictTypeChecked,
-	...tseslint.configs.stylisticTypeChecked,
 	{
 		rules: {
 			/*
