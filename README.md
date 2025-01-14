@@ -1,19 +1,19 @@
 # eslint-config-typescript
 
-KeetaPay standard typescript ESLint config
+KeetaNetwork standard typescript ESLint config
 
 ## Usage
 
 ```bash
-$ npm install -SD @keetapay/eslint-config-typescript
+$ npm install -SD @keetanetwork/eslint-config-typescript
 ```
 
 ```js
 // eslint.config.mjs
-import keetapayConfig from '@keetapay/eslint-config-typescript';
+import keetanetworkConfig from '@keetanetwork/eslint-config-typescript';
 
 export default [
-	...keetapayConfig,
+	...keetanetworkConfig,
 	{
 		languageOptions: {
 			parserOptions: {
