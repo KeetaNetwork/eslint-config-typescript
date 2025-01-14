@@ -1,3 +1,3 @@
-import keetapayConfig from './index.js';
+import keetanetworkConfig from './index.js';
 
-export default keetapayConfig;
+export default keetanetworkConfig;
