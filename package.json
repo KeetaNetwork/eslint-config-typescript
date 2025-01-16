@@ -11,6 +11,12 @@
 		"test": "make test",
 		"eslint": "eslint"
 	},
+	"devDependencies": {
+		"@eslint/js": "9.13.0",
+		"@types/eslint__js": "8.42.3",
+		"@types/node": "20.16.11",
+		"typescript": "5.6.3"
+	},
 	"dependencies": {
 		"@stylistic/eslint-plugin": "2.10.0",
 		"@typescript-eslint/eslint-plugin": "8.12.2",
@@ -23,11 +29,5 @@
 	},
 	"peerDependencies": {
 		"typescript": "<=5.6.3"
-	},
-	"devDependencies": {
-		"@eslint/js": "9.13.0",
-		"@types/eslint__js": "8.42.3",
-		"@types/node": "20.16.11",
-		"typescript": "5.6.3"
 	}
 }
