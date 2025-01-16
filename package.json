@@ -1,6 +1,6 @@
 {
 	"name": "@keetanetwork/eslint-config-typescript",
-	"version": "1.4.4",
+	"version": "1.4.5",
 	"description": "KeetaNetwork Typescript Eslint Config",
 	"repository": "https://github.com/keetanetwork/eslint-config-typescript.git",
 	"main": "index.js",
