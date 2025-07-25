@@ -151,11 +151,10 @@ export default [
 			}
 		},
 		rules: {
-			'package-json-dependencies/controlled-versions': ['error', { 'granularity': 'fixed' }],
-			'package-json-dependencies/alphabetically-sorted-dependencies': 'error',
-			'@typescript-eslint/quotes': 'off',
-			'@typescript-eslint/semi': 'off',
-			'@typescript-eslint/no-unused-expressions': 'off'
+			'package-json-dependencies/controlled-versions': ['error', { 'granularity': {
+				'peerDependencies': 'minor'
+			}}],
+			'package-json-dependencies/alphabetically-sorted-dependencies': 'error'
 		}
 	}
 ];
