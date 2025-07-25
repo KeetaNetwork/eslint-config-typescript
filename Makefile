@@ -12,6 +12,7 @@ node_modules: node_modules/.done
 	@:
 
 test: node_modules
+	npm run eslint package.json index.js
 	npm run eslint -- $(ESLINT_TEST_OPTIONS) tests/good
 	@retval='0' && for file in tests/bad/*.ts; do \
 		npm run eslint -- $(ESLINT_TEST_OPTIONS) "$$file" || continue; \

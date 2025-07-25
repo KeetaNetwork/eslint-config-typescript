@@ -9,7 +9,7 @@ $ npm install -SD @keetanetwork/eslint-config-typescript
 ```
 
 ```js
-// eslint.config.mjs
+// .eslint.config.mjs
 import keetanetworkConfig from '@keetanetwork/eslint-config-typescript';
 
 export default [
