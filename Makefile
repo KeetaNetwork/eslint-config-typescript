@@ -32,6 +32,7 @@ test: node_modules
 	exit "$$retval"
 	rm -rf tests/fix
 	cd plugins/eslint-plugin-return-parens && npm run test
+	cd plugins/eslint-plugin-prefer-bigint-literal && npm run test
 
 clean:
 	rm -rf node_modules plugins/eslint-plugin-return-parens/node_modules
