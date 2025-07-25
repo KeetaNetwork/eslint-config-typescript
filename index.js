@@ -2,6 +2,7 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
 
+import preferBigIntLiteral from 'eslint-plugin-prefer-bigint-literal';
 import returnParens from 'eslint-plugin-return-parens';
 import packageJsonDependencies from 'eslint-plugin-package-json-dependencies';
 
@@ -47,6 +48,7 @@ export default [
 			...tseslint.configs.stylisticTypeChecked
 		],
 		plugins: {
+			['prefer-bigint-literal']: preferBigIntLiteral,
 			['return-parens']: returnParens,
 			['@stylistic']: stylistic
 		},
@@ -136,7 +138,8 @@ export default [
 			'@typescript-eslint/restrict-template-expressions': 'off',
 			'@typescript-eslint/no-unnecessary-type-arguments': 'off',
 			'@typescript-eslint/no-unnecessary-type-parameters': 'off',
-			'@typescript-eslint/prefer-promise-reject-errors': ['error', { allowEmptyReject: true }]
+			'@typescript-eslint/prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
+			'prefer-bigint-literal/prefer-bigint-literal': 'error'
 		}
 	}),
 	{
