@@ -1,6 +1,6 @@
 {
 	"name": "@keetanetwork/eslint-config-typescript",
-	"version": "1.4.6",
+	"version": "1.4.7",
 	"description": "KeetaNetwork Typescript Eslint Config",
 	"repository": "https://github.com/keetanetwork/eslint-config-typescript.git",
 	"main": "index.js",
@@ -24,6 +24,7 @@
 		"eslint": "9.13.0",
 		"eslint-plugin-import": "2.31.0",
 		"eslint-plugin-package-json-dependencies": "1.0.18",
+		"eslint-plugin-prefer-bigint-literal": "file:plugins/eslint-plugin-prefer-bigint-literal",
 		"eslint-plugin-return-parens": "file:plugins/eslint-plugin-return-parens",
 		"typescript-eslint": "8.12.2"
 	},
@@ -36,5 +37,8 @@
 		"@types/eslint__js": "8.42.3",
 		"@types/node": "20.16.11",
 		"typescript": "5.6.3"
+	},
+	"engines": {
+		"node": "20.18.0"
 	}
 }

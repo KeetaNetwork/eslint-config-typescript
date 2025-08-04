@@ -1,20 +1,10 @@
 #! /usr/bin/env ts-node
 
-async function foo() {
-	return(42);
-}
-
-void foo();
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const bigint0 = 0n;
+const bigint0 = BigInt(0);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const bigint1 = 1n;
+const bigint1 = BigInt(1);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const bigintNeg = -1n;
+const bigintNeg = BigInt(-1);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const bigintHex = 0x1n;
-
-const bigintStr = '1';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const bigintFromStr = BigInt(bigintStr);
+const bigintHex = BigInt(0x1);

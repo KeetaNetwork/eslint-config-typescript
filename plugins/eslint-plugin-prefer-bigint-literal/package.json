@@ -1,0 +1,23 @@
+{
+  "name": "eslint-plugin-prefer-bigint-literal",
+  "version": "0.1.0",
+  "author": "Ryan Staples <rstaples@keeta.com>",
+  "description": "Enforce bigint constants are always literal",
+  "main": "index.js",
+  "scripts": {
+    "test": "node eslint-enforce-bigint-literal.test.js",
+    "lint": "eslint *.js"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "9.13.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.13.0"
+  }
+}
