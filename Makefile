@@ -3,6 +3,15 @@ ESLINT_TEST_OPTIONS = --parser-options '{"project":["tsconfig.json"]}'
 all:
 	@echo 'Nothing to do'
 
+help:
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Targets:"
+	@echo "  all           - Default target (does nothing)"
+	@echo "  test          - Runs the test suite"
+	@echo "  clean         - Removes build artifacts"
+	@echo "  distclean     - Removes all build artifacts and dependencies"
+
 node_modules/.done: package.json package-lock.json
 	rm -rf node_modules
 	npm install
@@ -41,4 +50,4 @@ clean:
 distclean: clean
 	@:
 
-.PHONY: all test clean distclean
+.PHONY: all help test clean distclean
