@@ -14,7 +14,7 @@ help:
 
 node_modules/.done: package.json package-lock.json
 	rm -rf node_modules
-	npm install
+	npm clean-install
 	touch node_modules/.done
 
 node_modules: node_modules/.done
