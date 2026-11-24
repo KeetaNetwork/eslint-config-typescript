@@ -9,6 +9,7 @@ help:
 	@echo "Targets:"
 	@echo "  all           - Default target (does nothing)"
 	@echo "  test          - Runs the test suite"
+	@echo "  do-npm-pack   - Creates the package tarball"
 	@echo "  clean         - Removes build artifacts"
 	@echo "  distclean     - Removes all build artifacts and dependencies"
 
@@ -43,11 +44,15 @@ test: node_modules
 	cd plugins/eslint-plugin-return-parens && npm run test
 	cd plugins/eslint-plugin-prefer-bigint-literal && npm run test
 
+do-npm-pack:
+	npm pack
+
 clean:
 	rm -rf node_modules plugins/eslint-plugin-return-parens/node_modules
 	rm -rf tests/fix
+	rm -f keetanetwork-eslint-config-typescript-*.tgz
 
 distclean: clean
 	@:
 
-.PHONY: all help test clean distclean
+.PHONY: all help test do-npm-pack clean distclean
